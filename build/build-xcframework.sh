@@ -4,7 +4,7 @@ set -eo pipefail
 
 derived_data=SQLCipherBuild
 archives_dir=archives
-xcframework=SQLCipher.xcframework
+xcframework=../SQLCipher.xcframework
 
 rm -rf "${derived_data}" "${archives_dir}" "${xcframework}"
 
@@ -53,4 +53,4 @@ xcodebuild -create-xcframework \
     -archive archives/SQLCipher-iOS_Simulator.xcarchive -framework SQLCipher.framework \
     -archive archives/SQLCipher-macOS.xcarchive -framework SQLCipher.framework \
     -archive archives/SQLCipher-Mac_Catalyst.xcarchive -framework SQLCipher.framework \
-    -output SQLCipher.xcframework
+    -output "${xcframework}"
