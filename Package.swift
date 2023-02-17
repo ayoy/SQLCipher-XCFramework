@@ -16,7 +16,11 @@ let package = Package(
         .library(name: "SQLCipher", targets: ["SQLCipher", "_SQLCipherDummy"]),
     ],
     targets: [
-        .binaryTarget(name: "SQLCipher", path: "SQLCipher.xcframework"),
+        .binaryTarget(
+            name: "SQLCipher",
+            url: "https://github.com/ayoy/SQLCipher-XCFramework/releases/download/0.0.1/SQLCipher.xcframework.zip",
+            checksum: "b17df18101803e1efa98cefdd660ef0e111a7a02a5a92f4f40abd251cbf3cb29"
+        ),
         .target(name: "_SQLCipherDummy")
     ]
 )
